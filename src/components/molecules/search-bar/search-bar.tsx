@@ -2,10 +2,24 @@
 
 import { useState } from 'react';
 
+/**
+ * 搜尋欄的屬性介面
+ */
 interface SearchBarProps {
+    /** (選填) 輸入框的佔位文字 */
     placeholder?: string;
 }
 
+/**
+ * 搜尋欄元件。
+ *
+ * 提供一個帶有搜尋圖示的輸入框，用於搜尋圖片。
+ * 使用內部狀態管理輸入值。
+ *
+ * @param {Object} props - 元件參數
+ * @param {string} [props.placeholder='Search images...'] - 輸入框的佔位文字
+ * @return {JSX.Element} 渲染後的搜尋欄 UI
+ */
 const SearchBar = ({ placeholder = 'Search images...' }: SearchBarProps) => {
     const [query, setQuery] = useState('');
 

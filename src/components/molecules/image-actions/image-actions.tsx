@@ -1,14 +1,34 @@
 'use client';
 
+/**
+ * 圖片操作按鈕的屬性介面
+ */
 interface ImageActionsProps {
+    /** 圖片唯一識別碼，用於識別操作的目標圖片 */
     imageId: number;
 }
 
+/**
+ * 圖片操作按鈕群組元件。
+ *
+ * 提供儲存與分享圖片的互動按鈕。
+ * 使用 Hover 動畫，當父層元件被懸停時才會顯示。
+ *
+ * @param {Object} props - 元件參數
+ * @param {number} props.imageId - 圖片唯一識別碼
+ * @return {JSX.Element} 渲染後的操作按鈕群組
+ */
 const ImageActions = ({ imageId }: ImageActionsProps) => {
+    /**
+     * 處理儲存圖片事件
+     */
     const handleSave = () => {
         console.log(`Saved image ${imageId}`);
     };
 
+    /**
+     * 處理分享圖片事件
+     */
     const handleShare = () => {
         console.log(`Shared image ${imageId}`);
     };

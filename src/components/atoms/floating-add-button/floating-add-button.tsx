@@ -1,10 +1,27 @@
 'use client';
 
+/**
+ * 浮動新增按鈕的屬性介面
+ */
 interface FloatingAddButtonProps {
+    /** (選填) 點擊按鈕時的回呼函式 */
     onClick?: () => void;
 }
 
+/**
+ * 浮動新增按鈕元件。
+ *
+ * 固定於畫面右下角的圓形按鈕，帶有漸層背景與陰影效果。
+ * 點擊時會觸發回呼函式，並在 console 輸出日誌。
+ *
+ * @param {Object} props - 元件參數
+ * @param {() => void} [props.onClick] - 點擊按鈕時的回呼函式
+ * @return {JSX.Element} 渲染後的浮動按鈕 UI
+ */
 const FloatingAddButton = ({ onClick }: FloatingAddButtonProps) => {
+    /**
+     * 處理按鈕點擊事件
+     */
     const handleClick = () => {
         console.log('Add button clicked');
         onClick?.();

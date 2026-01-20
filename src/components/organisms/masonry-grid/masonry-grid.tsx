@@ -2,14 +2,37 @@ import MasonryImage from '@/components/atoms/masonry-image';
 import SearchBar from '@/components/molecules/search-bar';
 import FloatingAddButton from '@/components/atoms/floating-add-button';
 
-// Generate image data with stable seeds (no Math.random for SSR consistency)
-const generateImages = (count: number) => {
+/**
+ * 圖片資料結構
+ */
+interface ImageData {
+    /** 圖片唯一識別碼 */
+    id: number;
+    /** 圖片來源網址 */
+    src: string;
+    /** 圖片替代文字 */
+    alt: string;
+    /** 圖片寬度 (像素) */
+    width: number;
+    /** 圖片高度 (像素) */
+    height: number;
+}
+
+/**
+ * 生成圖片資料陣列。
+ *
+ * 使用固定的 seed 演算法確保 SSR 與 CSR 的一致性，
+ * 避免 hydration mismatch 問題。
+ *
+ * @param {number} count - 要生成的圖片數量
+ * @return {ImageData[]} 圖片資料陣列
+ */
+const generateImages = (count: number): ImageData[] => {
     const heights = [300, 350, 400, 450, 500, 550, 600];
     return Array.from({ length: count }, (_, i) => {
-        // Use deterministic pattern based on index
         const height = heights[i % heights.length];
         const width = 400;
-        const seed = (i * 7 + 13) % 1000; // Stable seed based on index
+        const seed = (i * 7 + 13) % 1000;
         return {
             id: i,
             src: `https://picsum.photos/seed/${seed}/${width}/${height}`,
@@ -20,6 +43,14 @@ const generateImages = (count: number) => {
     });
 };
 
+/**
+ * 瀑布流圖片展示頁面元件。
+ *
+ * 包含固定的 Header、響應式瀑布流佈局與浮動新增按鈕。
+ * 使用 CSS Multi-column 實現瀑布流效果，支援 2-5 欄響應式切換。
+ *
+ * @return {JSX.Element} 渲染後的瀑布流頁面
+ */
 const MasonryGrid = () => {
     const images = generateImages(30);
 
@@ -39,7 +70,6 @@ const MasonryGrid = () => {
                         </h1>
                     </div>
                     <div className="flex items-center gap-2">
-                        {/* SearchBar is a Client Component */}
                         <SearchBar />
                     </div>
                 </div>
@@ -61,7 +91,7 @@ const MasonryGrid = () => {
                 </div>
             </main>
 
-            {/* Floating action button (Client Component) */}
+            {/* Floating action button */}
             <FloatingAddButton />
         </div>
     );
