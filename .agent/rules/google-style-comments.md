@@ -1,6 +1,12 @@
 ---
+trigger: always_on
+---
+
+---
+
 name: google-style-comments
 description: 當撰寫、重構或解釋 TypeScript/JavaScript 程式碼時啟動。強制為所有導出的函式、類別、介面與元件添加 Google Style 的繁體中文 JSDoc 註解。
+
 ---
 
 # Google Style 程式碼註解規範 (繁體中文版)

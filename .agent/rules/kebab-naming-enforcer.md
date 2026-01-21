@@ -1,6 +1,12 @@
 ---
+trigger: always_on
+---
+
+---
+
 name: kebab-naming-enforcer
 description: 當使用者要求建立或修改檔案時啟動。強制執行全域 kebab-case 命名與檔案結構規範。
+
 ---
 
 # 全域檔案命名與結構規範

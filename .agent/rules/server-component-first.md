@@ -1,6 +1,12 @@
 ---
+trigger: always_on
+---
+
+---
+
 name: server-component-first
-description: 當建立元件或頁面時啟動。強制執行「Server Component 優先」策略，僅在涉及互動、Hook 或瀏覽器 API 時才使用 'use client'。
+description: 強制執行「Server Component 優先」策略
+
 ---
 
 # Server Component 優先策略
