@@ -1,17 +1,13 @@
 ---
-trigger: always_on
----
-
----
-
 name: google-style-comments
 description: 當撰寫、重構或解釋 TypeScript/JavaScript 程式碼時啟動。強制為所有導出的函式、類別、介面與元件添加 Google Style 的繁體中文 JSDoc 註解。
-
 ---
 
 # Google Style 程式碼註解規範 (繁體中文版)
 
 為了確保程式碼的可讀性與 IDE 支援度，所有 Exported (導出) 的程式碼實體必須遵循 Google JavaScript Style Guide 的 JSDoc 規範。
+
+> 📚 **官方參考**：[Google JavaScript Style Guide - JSDoc](https://google.github.io/styleguide/jsguide.html#jsdoc)
 
 ## 1. 核心原則 (Core Principles)
 
@@ -23,11 +19,13 @@ description: 當撰寫、重構或解釋 TypeScript/JavaScript 程式碼時啟�
 
 依照 Google Style，請使用以下標準標籤：
 
-- `@param {Type} name` - 說明參數的名稱、型別與用途。若參數為選填，請標註 `[name]`。
-- `@return {Type}` - (或 `@returns`) 說明回傳值的型別與意義。若無回傳值 (void) 則可省略。
-- `@throws {ErrorType}` - 說明函式可能拋出的錯誤類型與原因。
-- `@deprecated` - 若該功能已過時，請說明原因與替代方案。
-- `@example` - 提供程式碼使用範例。
+| 標籤                  | 說明                                                      |
+| --------------------- | --------------------------------------------------------- |
+| `@param {Type} name`  | 說明參數的名稱、型別與用途。若參數為選填，請標註 `[name]` |
+| `@return {Type}`      | (或 `@returns`) 說明回傳值的型別與意義                    |
+| `@throws {ErrorType}` | 說明函式可能拋出的錯誤類型與原因                          |
+| `@deprecated`         | 若該功能已過時，請說明原因與替代方案                      |
+| `@example`            | 提供程式碼使用範例                                        |
 
 ## 3. 撰寫範例 (Examples)
 

@@ -1,12 +1,6 @@
 ---
 trigger: always_on
----
-
----
-
-name: atomic-design-gen
 description: 當使用者要求建立元件、UI 區塊或進行前端開發時啟動。強制執行 Atomic Design 架構與特定的檔案導出規範。
-
 ---
 
 # Atomic Design 元件開發規範

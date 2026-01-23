@@ -2,13 +2,6 @@
 trigger: always_on
 ---
 
----
-
-name: server-component-first
-description: 強制執行「Server Component 優先」策略
-
----
-
 # Server Component 優先策略
 
 在 Next.js App Router 架構下，所有元件預設皆為 **Server Component**。你必須嚴格控制 Client Boundary，以達到最佳效能與 SEO。
